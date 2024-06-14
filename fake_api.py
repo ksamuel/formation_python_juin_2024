@@ -1,3 +1,4 @@
+import json
 import time
 from typing import Dict
 
@@ -15,6 +16,7 @@ class AddRequest(BaseModel):
 @app.post("/add")
 async def add(request: AddRequest) -> Dict[str, int]:
     result = request.a + request.b
+
     time.sleep(20)  # Wait for 2 seconds
     return {"result": result}
 
