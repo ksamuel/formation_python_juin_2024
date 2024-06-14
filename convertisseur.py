@@ -8,6 +8,7 @@ def get_crypto_rates(crypto_id):
     url = "https://api.coingecko.com/api/v3/simple/price"
     params = {"ids": crypto_id, "vs_currencies": "eur"}
     response = requests.get(url, params=params)
+    print(response.json())
     return response.json().get(crypto_id, {}).get("eur", 0)
 
 

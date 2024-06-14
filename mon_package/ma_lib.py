@@ -1,5 +1,7 @@
 import string
 
+import requests
+
 
 def get_words(text):
     text = text.casefold()
@@ -19,3 +21,8 @@ def count(words):
             stats[word] = 1
 
     return stats
+
+
+def get_dog_pic():
+    response = requests.get("https://dog.ceo/api/breeds/image/random")
+    return response.json()
